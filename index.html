@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="enter-form" class="enter-form-hidden">
+        <div class="enter-form-title">
+            Вход
+            <img class="close-form" src="close.png" onclick="lol()"/>
+        </div>
+        <input class="enter-form-input1" placeholder="Логин"/>
+        <input class="enter-form-input2" placeholder="Пароль"/>
+        <div class="forgot-pass">
+            Забыли пароль?
+        </div>
+        <div class="btn-enter" onclick="enter()">
+            Вход
+        </div>
+        <div class="no-acc-title">
+            Нет аккаунта
+        </div>
+        <div class="no-acc-reg" onclick="registrateFromAuth()">
+            Зарегистрироваться?
+        </div>
+    </div>
+
+    <div id="first-page">
+        <div class="header">
+            <div class="auth-btn" onclick="auth()">
+                Авторизация
+            </div>
+            <img class="auth-pic" src="auth.png"/>
+        </div>
+        <div class="platform">
+            <div class="platform-card">
+                <div class="platform-card-text">
+                    <div class="platform-title">
+                        Возможности платформы
+                    </div>
+                    <div class="platform-description">
+                        Интерактивная платформа-сообщество для стажеров и участников молодежных карьерных проектов
+                    </div>
+                    <div class="how-it-works-btn" onclick="renderWelcome()">
+                        Как это работает
+                    </div>
+                    <div class="registration" onclick="registrate()">
+                        Зарегистрироваться
+                    </div>
+                </div>
+                <img class="people-pic" src="people3.png"/>
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </div>
+
+    <template id="first_paper">
+            <div class="header">
+                <div class="auth-btn" onclick="auth()">
+                    Авторизация
+                </div>
+                <img class="auth-pic" src="auth.png"/>
+            </div>
+            <div class="platform">
+                <div class="platform-card">
+                    <div class="platform-card-text">
+                        <div class="platform-title">
+                            Возможности платформы
+                        </div>
+                        <div class="platform-description">
+                            Интерактивная платформа-сообщество для стажеров и участников молодежных карьерных проектов
+                        </div>
+                        <div class="how-it-works-btn" onclick="renderWelcome()">
+                            Как это работает
+                        </div>
+                        <div class="registration" onclick="registrate()">
+                            Зарегистрироваться
+                        </div>
+                    </div>
+                    <img class="people-pic" src="people3.png"/>
+                </div>
+            </div>
+            <div class="paper-description-policy">
+                Политика конфиденциальности
+            </div>
+            <div class="paper-description-school">
+                © 2023 Высшая школа руководителей
+            </div>
+    </template>
+
+    <template id="welcome-page">
+        <div id="welcome-blade">
+            <div class="header">
+                <div class="auth-btn" onclick="auth()">
+                    Авторизация
+                </div>
+                <img class="auth-pic" src="auth.png"/>
+            </div>
+            <div class="how-it-works">
+                <div class="how-it-works-card">
+                    <div class="platform-card-text">
+                        <div class="how-it-works-title">
+                            Как это работает?
+                        </div>
+                        <div class="how-it-works-part">
+                            Кандидат
+                        </div>
+                        <div class="how-it-works-part-description">
+                            Пользователи платформы, которые подают заявку на стажировку.
+                        </div>
+                        <div class="how-it-works-part">
+                            Стажеры
+                        </div>
+                        <div class="how-it-works-part-description">
+                            Участники программы, которые прошли 3 этапа отбора на стажировку.
+                        </div>
+                        <div class="how-it-works-part">
+                            Кураторы
+                        </div>
+                        <div class="how-it-works-part-description">
+                            Сотрудники Центра развития карьеры Правительства Москвы, курирующие программу стажировки.
+                        </div>
+                        <div class="how-it-works-part">
+                            Наставники
+                        </div>
+                        <div class="how-it-works-part-description">
+                            Руководители и сотрудники органов власти и подведомственных учреждений Правительства Москвы, которые обучают, ставят задачи стажеру, контролируют выполнение работы и дают обратную связь о работе стажера.
+                        </div>
+                        <div class="how-it-works-part">
+                            Кадровые специалисты
+                        </div>
+                        <div class="how-it-works-part-description">
+                            Сотрудники органов власти и подведомственных учреждений Правительства Москвы, курирующие наставников стажеров и взаимодействующие со старшим куратором программы стажировки.
+                        </div>
+                        <div class="home-page-btn" onclick="renderFirst()">
+                            На главную
+                        </div>
+                        <div class="registration" onclick="registrate()">
+                            Зарегистрироваться
+                        </div>
+                    </div>
+                    <img class="people-pic" src="people2.png"/>
+                </div>
+            </div>
+            <div class="paper-description-policy">
+                Политика конфиденциальности
+            </div>
+            <div class="paper-description-school">
+                © 2023 Высшая школа руководителей
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl_registr">
+        <div class="header">
+            <div class="auth-btn" onclick="auth()">
+                Авторизация
+            </div>
+            <img class="auth-pic" src="auth.png"/>
+        </div>
+        <div class="platform">
+            <div class="registr-card">
+                <div class="registr-card-text">
+                    <div class="registr-card-title">
+                        Возможности платформы
+                    </div>
+                    <div class="registr-card-description">
+                        Интерактивная платформа-сообщество для стажеров и участников молодежных карьерных проектов
+                    </div>
+                    <img class="people-pic" src="poeple.png"/>
+                </div>
+                <div class="registr-form">
+                    <div class="registr-form-title">
+                        Регистрация
+                    </div>
+                    <input class="registr-form-input" placeholder="Номер телефона"/>
+                    <input class="registr-form-input" placeholder="Почта"/>
+                    <input class="registr-form-input" placeholder="Логин"/>
+                    <input class="registr-form-input" placeholder="Пароль"/>
+                    <input class="registr-form-input" placeholder="Повторите пароль"/>
+                    <div class="registr-form-btn" onclick="registrated()">
+                        Зарегистрироваться
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </template>
+
+
+    <template id="tmpl_entered">
+        <div class="header">
+            <div class="menu-btn" onclick="showMain()">
+                Главная
+            </div>
+            <div class="menu-btn">
+                Расписание
+            </div>
+            <div class="menu-btn">
+                Новости
+            </div>
+            <div class="menu-btn">
+                Материалы
+            </div>
+            <div class="menu-btn profile">
+                    <div class="menu-btn ava">
+                        <img class="kolok" src="kolok.png"/>
+                        <img class="chel" src="chel.png"/>
+                    </div>
+                <div class="menu-btn profile-btn" onclick="showProfile()">
+                    Кандидат
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+                    <div class="main-paper-row-one">
+                    <div class="first-card">
+                        <div class="card-chart">
+
+                        </div>
+                        <div class="card-title">
+                            Карьерная школа
+                            <img class="next-card" src="next.png" onclick="nextCardStep1()"/>
+                        </div>
+                        <div class="card-module">
+                            Модуль 4
+                        </div>
+                        <div class="card-tem">
+                            Тема 6: Тема
+                        </div>
+                        <div class="card-lesson">
+                            Урок 3
+                        </div>
+                        <div class="card-hours">
+                            7 ак.ч.
+                            <img class="card-hours-pic" src=""/>
+                        </div>
+                        <div class="card-teacher">
+                            Преподаватель: Иванов И.И.
+                            <img class="card-teacher-pic" src=""/>
+                        </div>
+                        <div class="card-plase">
+                            <img class="card-place-pic" src=""/>
+                            Место проведения: онлайн
+                        </div>
+                        <div class="card-date">
+                            23.05.2023
+                        </div>
+                        <div class="card-materials">
+                            <img class="card-place-pic" src=""/>
+                            Материалы модуля
+                        </div>
+                    </div>
+
+                    <div class="second-card">
+                        <div class="second-card-title">
+                            Форум
+                        </div>
+                        <div class="notifications">
+                            <div class="notification-card">
+                                <div class="notification-card-title">
+                                    Тема
+                                </div>
+                                <div class="notification-card-name">
+                                    Имя пользователя
+                                </div>
+                                <div class="notification-card-text">
+                                    Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                                </div>
+                            </div>
+                            <div class="notification-card">
+                                <div class="notification-card-title">
+                                    Тема
+                                </div>
+                                <div class="notification-card-name">
+                                    Имя пользователя
+                                </div>
+                                <div class="notification-card-text">
+                                    Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                                </div>
+                            </div>
+                            <div class="notification-card">
+                                <div class="notification-card-title">
+                                    Тема
+                                </div>
+                                <div class="notification-card-name">
+                                    Имя пользователя
+                                </div>
+                                <div class="notification-card-text">
+                                    Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-paper-row-two">
+                    <div class="main-paper-row-text">
+                        <div class="main-paper-row-two-title">
+                            Предложите идею публикации на нашем портале!
+                        </div>
+                        <div class="main-paper-row-two-description">
+                            Вы можете предложить публикацию идеи/проекта, новости, мероприятия, материала. Отправьте заявку, администратор её рассмотрит и свяжется с вами.
+                        </div>
+                    </div>
+                    <div class="main-paper-row-two-btn">
+                        Предложить идею!
+                    </div>
+                </div>
+                <div class="paper-description-policy">
+                    Политика конфиденциальности
+                </div>
+                <div class="paper-description-school">
+                    © 2023 Высшая школа руководителей
+                </div>
+        </div>
+    </template>
+
+    <template id="tmpl_school">
+        <div class="main-paper-row-one">
+                <div class="first-card">
+                    <div class="card-chart">
+
+                    </div>
+                    <div class="card-title">
+                        Карьерная школа
+                        <img class="next-card" src="next.png" onclick="nextCardStep1()"/>
+                    </div>
+                    <div class="card-module">
+                        Модуль 4
+                    </div>
+                    <div class="card-tem">
+                        Тема 6: Тема
+                    </div>
+                    <div class="card-lesson">
+                        Урок 3
+                    </div>
+                    <div class="card-hours">
+                        7 ак.ч.
+                        <img class="card-hours-pic" src=""/>
+                    </div>
+                    <div class="card-teacher">
+                        Преподаватель: Иванов И.И.
+                        <img class="card-teacher-pic" src=""/>
+                    </div>
+                    <div class="card-plase">
+                        <img class="card-place-pic" src=""/>
+                        Место проведения: онлайн
+                    </div>
+                    <div class="card-date">
+                        23.05.2023
+                    </div>
+                    <div class="card-materials">
+                        <img class="card-place-pic" src=""/>
+                        Материалы модуля
+                    </div>
+                </div>
+                <div class="second-card">
+                    <div class="second-card-title">
+                        Форум
+                    </div>
+                    <div class="notifications">
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+            <div class="main-paper-row-two">
+                <div class="main-paper-row-text">
+                    <div class="main-paper-row-two-title">
+                        Предложите идею публикации на нашем портале!
+                    </div>
+                    <div class="main-paper-row-two-description">
+                        Вы можете предложить публикацию идеи/проекта, новости, мероприятия, материала. Отправьте заявку, администратор её рассмотрит и свяжется с вами.
+                    </div>
+                </div>
+                <div class="main-paper-row-two-btn">
+                    Предложить идею!
+                </div>
+            </div>
+    <div class="paper-description-policy">
+        Политика конфиденциальности
+    </div>
+    <div class="paper-description-school">
+        © 2023 Высшая школа руководителей
+    </div>
+    </template>
+
+
+
+    <template id="tmpl_test">
+        <div class="main-paper-row-one">
+            <div class="first-card">
+                <div class="card-title">
+                    <div class="card-title-text">Тестирование</div>
+                    <img class="next-card" src="next.png" onclick="nextCardStep2()"/>
+                </div>
+                <div class="card-module">
+                    Анализ информации
+                </div>
+                <div class="card-info">
+                    Сданные экзамен: русский язык
+                    <img class="card-hours-pic" src=""/>
+                </div>
+                <div class="card-info">
+                    Следующие экзамены: Компьютерная грамотность
+                    <img class="card-teacher-pic" src=""/>
+                </div>
+                <div class="card-info">
+                    <img class="card-place-pic" src=""/>
+                    Длительность: 40 мин.
+                </div>
+                <div class="card-info">
+                    Место проведения: онлайн
+                </div>
+                <div class="card-info">
+                    <img class="card-place-pic" src=""/>
+                    Дата сдачи: 5 мая (Пт) 23:55
+                </div>
+                <div class="test-btn">
+                    Перейти
+                </div>
+            </div>
+                <div class="second-card">
+                    <div class="second-card-title">
+                        Форум
+                    </div>
+                    <div class="notifications">
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-paper-row-two">
+            <div class="main-paper-row-text">
+                <div class="main-paper-row-two-title">
+                    Предложите идею публикации на нашем портале!
+                </div>
+                <div class="main-paper-row-two-description">
+                    Вы можете предложить публикацию идеи/проекта, новости, мероприятия, материала. Отправьте заявку, администратор её рассмотрит и свяжется с вами.
+                </div>
+            </div>
+            <div class="main-paper-row-two-btn">
+                Предложить идею!
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </template>
+
+    <template id="tmpl_champ">
+        <div class="main-paper-row-one">
+            <div class="first-card">
+                <div class="card-title">
+                    <div class="card-title-text">Кейс-чемпионат</div>
+                    <img class="next-card" src="next.png" onclick="nextCardStep3()"/>
+                </div>
+                <div class="card-module">
+                    Кейс 5
+                </div>
+                <div class="card-info">
+                    Техническое задание
+                    <img class="card-hours-pic" src=""/>
+                </div>
+                <div class="card-info">
+                    Команда
+                    <img class="card-teacher-pic" src=""/>
+                </div>
+                <div class="card-info">
+                    <img class="card-place-pic" src=""/>
+                    Обсуждение
+                </div>
+                <div class="card-info">
+                    <img class="card-place-pic" src=""/>
+                    Дата сдачи: 5 мая (Пт) 23:55
+                </div>
+                <div class="champ-btn">
+                    Перейти
+                </div>
+            </div>
+                <div class="second-card">
+                    <div class="second-card-title">
+                        Форум
+                    </div>
+                    <div class="notifications">
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-paper-row-two">
+            <div class="main-paper-row-text">
+                <div class="main-paper-row-two-title">
+                    Предложите идею публикации на нашем портале!
+                </div>
+                <div class="main-paper-row-two-description">
+                    Вы можете предложить публикацию идеи/проекта, новости, мероприятия, материала. Отправьте заявку, администратор её рассмотрит и свяжется с вами.
+                </div>
+            </div>
+            <div class="main-paper-row-two-btn">
+                Предложить идею!
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </template>
+
+    <template id="tmpl_student">
+        <div class="main-paper-row-one">
+            <div class="first-card">
+                <div class="card-chart">
+
+                </div>
+                <div class="card-title">
+                    <div class="card-title-text">Стажировка</div>
+                    <img class="next-card" src="next.png" onclick="nextCardStep4()"/>
+                </div>
+                <div class="student-info">
+                    Подача заявки
+                    <img class="card-hours-pic" src=""/>
+                </div>
+                <div class="student-info">
+                    Рассмотрение заявки
+                    <img class="card-hours-pic" src=""/>
+                </div>
+                <div class="student-info">
+                    Прохождение карьерной школы
+                    <img class="card-teacher-pic" src=""/>
+                </div>
+                <div class="student-info">
+                    <img class="card-place-pic" src=""/>
+                    Прохождение тестирования
+                </div>
+                <div class="student-info">
+                    <img class="card-place-pic" src=""/>
+                    Прохождение Кейс-чемпионата
+                </div>
+                <div class="student-info">
+                    <img class="card-place-pic" src=""/>
+                    Прохождение на стажироваку
+                </div>
+                <div class="student-btn">
+                    Подать заявку
+                </div>
+            </div>
+                <div class="second-card">
+                    <div class="second-card-title">
+                        Форум
+                    </div>
+                    <div class="notifications">
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                        <div class="notification-card">
+                            <div class="notification-card-title">
+                                Тема
+                            </div>
+                            <div class="notification-card-name">
+                                Имя пользователя
+                            </div>
+                            <div class="notification-card-text">
+                                Lörem ipsum nun krona whataboutism faling. Dekapol ponengen. Presade föns, dusk gigak. Nunas eur, käning. Dida saliga plamåledes pant. Donade ponade därför att plogga tesm. Rovidån mitessade i tremorade...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="main-paper-row-two">
+            <div class="main-paper-row-text">
+                <div class="main-paper-row-two-title">
+                    Предложите идею публикации на нашем портале!
+                </div>
+                <div class="main-paper-row-two-description">
+                    Вы можете предложить публикацию идеи/проекта, новости, мероприятия, материала. Отправьте заявку, администратор её рассмотрит и свяжется с вами.
+                </div>
+            </div>
+            <div class="main-paper-row-two-btn">
+                Предложить идею!
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </template>
+
+    <template id="tmpl_profile">
+        <div class="cloud">
+            <div class="column-cloud1">
+                <div class="title-cloud">
+                    Стажировка
+                </div>
+                <div class="description-cloud">
+                    Вы остановились на «Заявление на стажировку»
+                </div>
+                <div class="btn-cloud">
+                    Перейти
+                </div>
+            </div>
+            <div class="column-cloud2">
+                <div class="block1 status">
+                    <div class="status-title">
+                        Не подана
+                    </div>
+                    <div class="status-description">
+                        Статус заявки
+                    </div>
+                </div>
+                <div class="block2 proces">
+                    <div class="status-title">
+                        0/6
+                    </div>
+                    <div class="status-description">
+                        Прогресс прохождения на стажировку
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="form-title">
+                Заявление на стажировку
+            </div>
+            <div class="input-name">
+                Фамилия Имя Отчество
+            </div>
+            <input class="form-input-name"/>
+            <div class="input-name">
+                Возраст
+            </div>
+            <input class="form-input-age"/>
+            <div class="input-name">
+                Паспорт
+            </div>
+            <input class="form-input-passport"/>
+            <div class="input-name">
+                Образование
+            </div>
+            <input class="form-input-educ"/>
+            <div class="input-name">
+                Год окончания последней ступени образования
+            </div>
+            <input class="form-input-year"/>
+            <div class="input-name">
+                Опыт работы
+            </div>
+            <input class="form-input-exp"/>
+            <div class="input-name">
+                Телефон
+            </div>
+            <input class="form-input-number"/>
+            <div class="input-name">
+                О себе
+            </div>
+            <textarea class="form-area"></textarea>
+            <div class="form-send-btn">
+                Отправить заявку
+            </div>
+        </div>
+        <div class="paper-description-policy">
+            Политика конфиденциальности
+        </div>
+        <div class="paper-description-school">
+            © 2023 Высшая школа руководителей
+        </div>
+    </template>
+</body>
+</html>
+
+<script src="main.js"></script>
