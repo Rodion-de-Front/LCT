@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #6A3C68;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header {
@@ -115,6 +121,7 @@ body {
     font-weight: 900;
     line-height: 78px;
     color:rgba(255, 237, 251, 1);
+    margin-bottom: 30px;
 }
 
 .how-it-works-part {
@@ -122,7 +129,7 @@ body {
     font-weight: 900;
     line-height: 29px;
     color: rgba(255, 237, 251, 1);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .how-it-works-part-description {
@@ -156,7 +163,7 @@ body {
     text-align: center;
     display: inline-block;
     height: 60px;
-    width: 369px;
+    width: 385px;
     border-radius: 10px;
     padding: 11px 20px 12px 20px;
     background-color: rgba(180, 246, 198, 1);
